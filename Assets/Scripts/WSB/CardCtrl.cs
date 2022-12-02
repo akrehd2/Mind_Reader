@@ -6,8 +6,10 @@ public class CardCtrl : MonoBehaviour
 {
     public GameObject[] Card = new GameObject[5];
     public GameObject[] CardText = new GameObject[5];
-    public float rotSpeed = 1000f;
+    public float rotSpeed = 100f;
     public bool turn = false;
+    public float timer = 0f;
+    public float tick = 1f;
 
     void Update()
     {
@@ -28,16 +30,17 @@ public class CardCtrl : MonoBehaviour
 
         if(turn)
         {
-            if(Card[0].transform.rotation.z < 100)
+            if (timer <= 3.6f)
             {
+                timer += tick * Time.deltaTime;
                 Card[0].transform.Rotate(new Vector3(0, 0, rotSpeed * Time.deltaTime));
             }
             else
             {
                 Card[0].transform.Rotate(new Vector3(0, 0, 0));
-                Card[0].transform.rotation = Quaternion.identity;
                 turn = false;
-            }    
+                timer = 0f;
+            }
         }
     }
 }
