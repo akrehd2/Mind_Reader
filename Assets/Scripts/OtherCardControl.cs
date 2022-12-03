@@ -9,6 +9,7 @@ public class OtherCardControl : MonoBehaviour
     public List<int> noUseNumber = new List<int>()
     { 1,2,3,4,5};
     public int nUNSize = 5;
+    public bool cardMove = true;
 
     void Start()
     {
@@ -19,10 +20,17 @@ public class OtherCardControl : MonoBehaviour
     void Update()
     {
         RandomNumber();
-        if(Count.otherNumberCount== otherCardNumber)
+
+        if (TurnManager.turnCount == 2)
         {
-            transform.position = new Vector3(-8, 0, 0);
+            if (Count.otherNumberCount == otherCardNumber)
+            {
+                transform.position = new Vector3(-8, 0, 0);
+                cardMove = false;
+            }
         }
+
+        SkillThree();
     }
 
     void RandomNumber()
@@ -33,6 +41,17 @@ public class OtherCardControl : MonoBehaviour
             Count.otherNumberCount = noUseNumber[i];
             noUseNumber.RemoveAt(i);
             nUNSize -= 1;
+        }
+    }
+
+    void SkillThree()
+    {
+        if (TurnManager.turnCount == 3 )
+        {
+            if (cardMove == false)
+            {
+                transform.position = new Vector3(8, 0, 0);
+            }
         }
     }
 }

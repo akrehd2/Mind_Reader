@@ -8,8 +8,10 @@ public class Count : MonoBehaviour
 
     public static int myNumberCount=0;
     public static int otherNumberCount = 0;
+    public static int mySkillCount = 0;
     public int count1;
     public int count2;
+    public Vector3 bSSPos;
 
     void Start()
     {
@@ -19,27 +21,33 @@ public class Count : MonoBehaviour
     
     void Update()
     {
-        if(TurnManager.turnCount>1)
+        count1 = myNumberCount;
+        count2 = otherNumberCount;
+
+        if (TurnManager.turnCount>1)
         {
             BSS();
         }
-        count1 = myNumberCount;
-        count2 = otherNumberCount;
+
     }
 
     void BSS()
     {
-        if(myNumberCount> otherNumberCount&&bSS==1)
+        if (myNumberCount > otherNumberCount && bSS == 1)
         {
             transform.position = new Vector3(0, 0, 0);
         }
-        if (myNumberCount == otherNumberCount && bSS == 2)
+        else if (myNumberCount == otherNumberCount && bSS == 2)
         {
             transform.position = new Vector3(0, 0, 0);
         }
-        if (myNumberCount < otherNumberCount && bSS == 3)
+        else if (myNumberCount < otherNumberCount && bSS == 3)
         {
             transform.position = new Vector3(0, 0, 0);
         }
+        else
+            transform.position = bSSPos;
+
     }
+
 }
