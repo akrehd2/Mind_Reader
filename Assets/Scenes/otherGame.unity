@@ -316,7 +316,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 136af2e835b58644d93fa5c86760300e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -341,7 +341,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillXPos: 10
+  skillNumber: 1
   cardPos: {x: 10, y: -11, z: 20}
+  skillMouse: 1
 --- !u!60 &169989979
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -449,7 +451,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 313ac7cbb6a1098439f0faa59de889d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -474,7 +476,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillXPos: 20
+  skillNumber: 3
   cardPos: {x: 20, y: -11, z: 20}
+  skillMouse: 1
 --- !u!60 &202894754
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -656,6 +660,8 @@ MonoBehaviour:
   bSS: 2
   count1: 0
   count2: 0
+  bSSPos: {x: 0, y: 30, z: 0}
+  skillUse: 1
 --- !u!212 &222623243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -696,7 +702,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 85943a90275ada04f9c854c870122f38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1002,6 +1008,8 @@ MonoBehaviour:
   bSS: 1
   count1: 0
   count2: 0
+  bSSPos: {x: -10, y: 30, z: 0}
+  skillUse: 1
 --- !u!212 &345909205
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1042,7 +1050,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 50eaf4893ebc03440af99f6b55ab05be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1086,6 +1094,8 @@ MonoBehaviour:
   bSS: 0
   count1: 0
   count2: 0
+  bSSPos: {x: 0, y: 0, z: 0}
+  skillUse: 1
 --- !u!4 &450865799
 Transform:
   m_ObjectHideFlags: 0
@@ -1470,7 +1480,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 484142bfb7149714ebd7533001602ee6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1680,7 +1690,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 70b4c2abfeb288047ad35a731567830d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1705,7 +1715,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillXPos: 15
+  skillNumber: 2
   cardPos: {x: 15, y: -11, z: 20}
+  skillMouse: 1
 --- !u!60 &825469146
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1811,7 +1823,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e4463ccbac8928443b91e9fb2fb891a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2242,7 +2254,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c6a9f966ddc301741a79f3aeeaacba93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2267,7 +2279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillXPos: 30
+  skillNumber: 5
   cardPos: {x: 30, y: -11, z: 20}
+  skillMouse: 1
 --- !u!60 &1282337019
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2375,7 +2389,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2e639f7eee01ca945b0c2c0faa6646c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2400,7 +2414,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillXPos: 25
+  skillNumber: 4
   cardPos: {x: 25, y: -11, z: 20}
+  skillMouse: 1
 --- !u!60 &1504269115
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2692,6 +2708,8 @@ MonoBehaviour:
   bSS: 3
   count1: 0
   count2: 0
+  bSSPos: {x: 10, y: 30, z: 0}
+  skillUse: 1
 --- !u!212 &1702066537
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2732,7 +2750,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1cc76f9d3f075e5478199860d8bef04c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2801,7 +2819,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bf851447f5773dc43a92467c8d3a7b8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3026,7 +3044,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bf851447f5773dc43a92467c8d3a7b8c, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0

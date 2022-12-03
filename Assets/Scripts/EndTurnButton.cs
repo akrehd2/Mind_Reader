@@ -21,5 +21,37 @@ public class EndTurnButton : MonoBehaviour
         {
             TurnManager.turnCount += 1;
         }
+
+        if (TurnManager.turnCount == 2 && Count.mySkillCount != 0)
+        {
+            TurnManager.turnCount += 1;
+            SkillPower();
+        }
+    }
+
+    void SkillPower()
+    {
+        if (Count.mySkillCount == 1)
+        {
+            Count.myNumberCount += 5;
+        }
+        if (Count.mySkillCount == 2)
+        {
+            Count.myNumberCount += Count.myNumberCount;
+        }
+        if(Count.mySkillCount == 3)
+        {
+            int i = Count.myNumberCount;
+            Count.myNumberCount = Count.otherNumberCount;
+            Count.otherNumberCount = i;
+        }
+        if (Count.mySkillCount == 4)
+        {
+
+        }
+        if (Count.mySkillCount == 5)
+        {
+
+        }
     }
 }
