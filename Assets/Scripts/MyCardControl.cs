@@ -40,11 +40,14 @@ public class MyCardControl : MonoBehaviour
 
     void SkillThree()
     {
-        if(TurnManager.turnCount==3)
+        if (Count.mySkillCount == 3)
         {
-            if (cardMove == false)
+            if (TurnManager.turnCount == 3)
             {
-                transform.position = new Vector3(-8, 0, 0);
+                if (cardMove == false)
+                {
+                    transform.position = new Vector3(-8, 0, 0);
+                }
             }
         }
     }
