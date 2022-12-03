@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class EndTurnButton : MonoBehaviour
 {
+    SpriteRenderer sprite;
+
     void Start()
     {
-        
+        sprite = GetComponent<SpriteRenderer>();
     }
 
  
     void Update()
     {
-        
+
     }
 
     void OnMouseDown()
     {
+        sprite.color = new Color(1, 1, 1, 0.5f);
+
         if (TurnManager.turnCount == 1 && Count.myNumberCount != 0)
         {
             TurnManager.turnCount += 1;
@@ -27,6 +31,11 @@ public class EndTurnButton : MonoBehaviour
             TurnManager.turnCount += 1;
             SkillPower();
         }
+    }
+
+    void OnMouseUp()
+    {
+        sprite.color = new Color(1, 1, 1, 1f);
     }
 
     void SkillPower()
