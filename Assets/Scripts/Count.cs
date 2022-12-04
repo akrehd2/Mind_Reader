@@ -9,6 +9,7 @@ public class Count : MonoBehaviour
     public static int myNumberCount=0;
     public static int otherNumberCount = 0;
     public static int mySkillCount = 0;
+    public static int otherSkillCount = 0;
     public int count1;
     public int count2;
     public Vector3 bSSPos;

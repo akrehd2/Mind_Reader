@@ -46,13 +46,16 @@ public class OtherCardControl : MonoBehaviour
 
     void SkillThree()
     {
-        if (Count.mySkillCount == 3)
+        if (Count.mySkillCount != 4 || Count.otherSkillCount != 4)
         {
-            if (TurnManager.turnCount == 3)
+            if ((Count.mySkillCount == 3 && Count.otherSkillCount != 3) || (Count.otherSkillCount == 3 && Count.mySkillCount != 3))
             {
-                if (cardMove == false)
+                if (TurnManager.turnCount == 3)
                 {
-                    transform.position = new Vector3(8, 0, 0);
+                    if (cardMove == false)
+                    {
+                        transform.position = new Vector3(8, 0, 0);
+                    }
                 }
             }
         }
