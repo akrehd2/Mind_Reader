@@ -30,6 +30,7 @@ public class EndTurnButton : MonoBehaviour
         {
             TurnManager.turnCount += 1;
             SkillPower();
+            AiSkillPower();
         }
     }
 
@@ -40,27 +41,59 @@ public class EndTurnButton : MonoBehaviour
 
     void SkillPower()
     {
-        if (Count.mySkillCount == 1)
+        if (Count.otherSkillCount != 4)
         {
-            Count.myNumberCount += 5;
-        }
-        if (Count.mySkillCount == 2)
-        {
-            Count.myNumberCount += Count.myNumberCount;
-        }
-        if(Count.mySkillCount == 3)
-        {
-            int i = Count.myNumberCount;
-            Count.myNumberCount = Count.otherNumberCount;
-            Count.otherNumberCount = i;
-        }
-        if (Count.mySkillCount == 4)
-        {
+            if (Count.mySkillCount == 1)
+            {
+                Count.myNumberCount += 5;
+            }
+            if (Count.mySkillCount == 2)
+            {
+                Count.myNumberCount += Count.myNumberCount;
+            }
+            if (Count.mySkillCount == 3 && Count.otherSkillCount != 3)
+            {
+                int i = Count.myNumberCount;
+                Count.myNumberCount = Count.otherNumberCount;
+                Count.otherNumberCount = i;
+            }
+            if (Count.mySkillCount == 4)
+            {
 
-        }
-        if (Count.mySkillCount == 5)
-        {
+            }
+            if (Count.mySkillCount == 5)
+            {
 
+            }
+        }
+    }
+
+    void AiSkillPower()
+    {
+        if (Count.mySkillCount != 4)
+        {
+            if (Count.otherSkillCount == 1)
+            {
+                Count.otherNumberCount += 5;
+            }
+            if (Count.otherSkillCount == 2)
+            {
+                Count.otherNumberCount += Count.otherNumberCount;
+            }
+            if (Count.otherSkillCount == 3 && Count.mySkillCount != 3)
+            {
+                int i = Count.otherNumberCount;
+                Count.otherNumberCount = Count.myNumberCount;
+                Count.myNumberCount = i;
+            }
+            if (Count.otherSkillCount == 4)
+            {
+
+            }
+            if (Count.otherSkillCount == 5)
+            {
+
+            }
         }
     }
 }
