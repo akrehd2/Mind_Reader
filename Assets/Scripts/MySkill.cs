@@ -9,6 +9,7 @@ public class MySkill : MonoBehaviour
 
     public Vector3 cardPos;
     public bool skillMouse = true;
+    public static bool cardDelete = false;
 
     void Start()
     {
@@ -33,6 +34,8 @@ public class MySkill : MonoBehaviour
                 skillMouse = true;
             }
         }
+
+        CardDestroy();
     }
 
     void OnMouseDown()
@@ -70,5 +73,15 @@ public class MySkill : MonoBehaviour
         }
     }
 
-
+    void CardDestroy()
+    {
+        if (cardDelete)
+        {
+            if (gameObject.transform.position == new Vector3(16, 0, 20))
+            {
+                cardDelete = false;
+                Destroy(gameObject);
+            }
+        }
+    }
 }

@@ -7,9 +7,11 @@ public class OtherCardControl : MonoBehaviour
     [SerializeField] int otherCardNumber;
 
     public List<int> noUseNumber = new List<int>()
-    { 1,2,3,4,5};
+    {1,2,3,4,5};
     public int nUNSize = 5;
     public bool cardMove = true;
+    public static bool cardDelete = false;
+    public int j = 0;
 
     void Start()
     {
@@ -21,6 +23,11 @@ public class OtherCardControl : MonoBehaviour
     {
         RandomNumber();
 
+        if(TurnManager.turnCount==1)
+        {
+            j = 0;
+        }
+
         if (TurnManager.turnCount == 2)
         {
             if (Count.otherNumberCount == otherCardNumber)
@@ -28,9 +35,16 @@ public class OtherCardControl : MonoBehaviour
                 transform.position = new Vector3(-8, 0, 0);
                 cardMove = false;
             }
+            noUseNumber.Remove(Count.otherNumberCount);
+            while(j==0)
+            {
+                nUNSize -= 1;
+                j += 1;
+            }
         }
 
         SkillThree();
+        CardDestroy();
     }
 
     void RandomNumber()
@@ -39,8 +53,7 @@ public class OtherCardControl : MonoBehaviour
         {
             int i = Random.Range(0, nUNSize);
             Count.otherNumberCount = noUseNumber[i];
-            noUseNumber.RemoveAt(i);
-            nUNSize -= 1;
+            noUseNumber.Remove(Count.otherNumberCount);
         }
     }
 
@@ -57,6 +70,18 @@ public class OtherCardControl : MonoBehaviour
                         transform.position = new Vector3(8, 0, 0);
                     }
                 }
+            }
+        }
+    }
+
+    void CardDestroy()
+    {
+        if (cardDelete)
+        {
+            if (gameObject.transform.position == new Vector3(8, 0, 0) || gameObject.transform.position == new Vector3(-8, 0, 0))
+            {
+                cardDelete = false;
+                Destroy(gameObject);
             }
         }
     }

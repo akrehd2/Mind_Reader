@@ -7,8 +7,9 @@ public class OtherSkill : MonoBehaviour
     [SerializeField] int skillNumber;
 
     public List<int> noUseSkill = new List<int>()
-    { 1,2,3,4,5};
+    {1,2,3,4,5};
     public int nUSSize = 5;
+    public static bool cardDelete = false;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class OtherSkill : MonoBehaviour
     
     void Update()
     {
+
         if(Count.otherSkillCount==skillNumber)
         {
             transform.position = new Vector3(-16, 0, 0);
@@ -27,6 +29,8 @@ public class OtherSkill : MonoBehaviour
         {
             AiSkillUse();
         }
+        noUseSkill.Remove(Count.otherSkillCount);
+        CardDestroy();
     }
 
     void AiSkillUse()
@@ -394,7 +398,17 @@ public class OtherSkill : MonoBehaviour
     {
         int i = Random.Range(0, nUSSize);
         Count.otherSkillCount = noUseSkill[i];
-        noUseSkill.RemoveAt(i);
-        nUSSize -= 1;
+    }
+
+    void CardDestroy()
+    {
+        if (cardDelete)
+        {
+            if (gameObject.transform.position == new Vector3(-16, 0, 0))
+            {
+                cardDelete = false;
+                Destroy(gameObject);
+            }
+        }
     }
 }

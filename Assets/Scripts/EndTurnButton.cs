@@ -6,6 +6,8 @@ public class EndTurnButton : MonoBehaviour
 {
     SpriteRenderer sprite;
 
+    public bool isDelay;
+
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -21,16 +23,31 @@ public class EndTurnButton : MonoBehaviour
     {
         sprite.color = new Color(1, 1, 1, 0.5f);
 
-        if (TurnManager.turnCount == 1 && Count.myNumberCount != 0)
+        if (TurnManager.turnCount == 1 && Count.myNumberCount != 0&&isDelay==false)
         {
             TurnManager.turnCount += 1;
+            isDelay = true;
+            StartCoroutine(Wait());
         }
 
-        if (TurnManager.turnCount == 2 && Count.mySkillCount != 0)
+        if (TurnManager.turnCount == 2 && Count.mySkillCount != 0 && isDelay == false)
         {
             TurnManager.turnCount += 1;
             SkillPower();
             AiSkillPower();
+            isDelay = true;
+            StartCoroutine(Wait());
+        }
+
+        if (TurnManager.turnCount == 3 && isDelay == false)
+        {
+            MyCardControl.cardDelete = true;
+            OtherCardControl.cardDelete = true;
+            OtherSkill.cardDelete = true;
+            MySkill.cardDelete = true;
+            Reset();
+            isDelay = true;
+            StartCoroutine(Wait());
         }
     }
 
@@ -45,11 +62,27 @@ public class EndTurnButton : MonoBehaviour
         {
             if (Count.mySkillCount == 1)
             {
-                Count.myNumberCount += 5;
+                if (Count.otherSkillCount == 3)
+                {
+                    Count.otherNumberCount += 5;
+                    Count.myNumberCount = Count.otherNumberCount;
+                }
+                else
+                {
+                    Count.myNumberCount += 5;
+                }
             }
             if (Count.mySkillCount == 2)
             {
-                Count.myNumberCount += Count.myNumberCount;
+                if (Count.otherSkillCount == 3)
+                {
+                    Count.otherNumberCount += Count.otherNumberCount;
+                    Count.myNumberCount = Count.otherNumberCount;
+                }
+                else
+                {
+                    Count.myNumberCount += Count.myNumberCount;
+                }
             }
             if (Count.mySkillCount == 3 && Count.otherSkillCount != 3)
             {
@@ -83,8 +116,7 @@ public class EndTurnButton : MonoBehaviour
             if (Count.otherSkillCount == 3 && Count.mySkillCount != 3)
             {
                 int i = Count.otherNumberCount;
-                Count.otherNumberCount = Count.myNumberCount;
-                Count.myNumberCount = i;
+                Count.otherNumberCount = MyCardControl.firstNumber;
             }
             if (Count.otherSkillCount == 4)
             {
@@ -95,5 +127,20 @@ public class EndTurnButton : MonoBehaviour
 
             }
         }
+    }
+
+    void Reset()
+    {
+        Count.myNumberCount = 0;
+        Count.otherNumberCount = 0;
+        Count.mySkillCount = 0;
+        Count.otherSkillCount = 0;
+        TurnManager.turnCount = 1;
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.0f);
+        isDelay = false;
     }
 }
