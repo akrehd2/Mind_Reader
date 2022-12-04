@@ -29,6 +29,10 @@ public class Count : MonoBehaviour
         {
             BSS();
         }
+        else if(TurnManager.turnCount==1)
+        {
+            transform.position = bSSPos;
+        }
 
     }
 

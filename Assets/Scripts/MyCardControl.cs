@@ -8,6 +8,8 @@ public class MyCardControl : MonoBehaviour
     [SerializeField] int myCardNumber;
     public Vector3 cardPos;
     public bool cardMove=true;
+    public static bool cardDelete = false;
+    public static int firstNumber = 0;
 
     void Start()
     {
@@ -26,7 +28,7 @@ public class MyCardControl : MonoBehaviour
                 cardMove = false;
             }
 
-            if (cardMove == false && Count.myNumberCount != myCardNumber)
+            if (cardMove == false && Count.myNumberCount != myCardNumber&&cardDelete==false)
             {
                 transform.position = cardPos;
                 cardMove = true;
@@ -34,6 +36,7 @@ public class MyCardControl : MonoBehaviour
         }
 
         SkillThree();
+        CardDestroy();
     }
 
     void OnMouseDown()
@@ -41,6 +44,7 @@ public class MyCardControl : MonoBehaviour
         if (TurnManager.turnCount == 1&&cardMove==true)
         {
             Count.myNumberCount = myCardNumber;
+            firstNumber = myCardNumber;
             transform.position = new Vector3(8, 0, 0);
             transform.localScale = new Vector3(0.9f, 0.9f, 0);
             cardMove = false;
@@ -83,6 +87,18 @@ public class MyCardControl : MonoBehaviour
                         transform.position = new Vector3(-8, 0, 0);
                     }
                 }
+            }
+        }
+    }
+
+    void CardDestroy()
+    {
+        if (cardDelete)
+        {
+            if (gameObject.transform.position==new Vector3(8,0,0)|| gameObject.transform.position == new Vector3(-8, 0, 0))
+            {
+                cardDelete = false;
+                Destroy(gameObject);
             }
         }
     }
