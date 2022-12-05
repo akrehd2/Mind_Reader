@@ -7,30 +7,33 @@ public class MyCardControl : MonoBehaviour
     [SerializeField] int myCardXPos;
     [SerializeField] int myCardNumber;
     public Vector3 cardPos;
+    public Vector3 target;
     public bool cardMove=true;
     public static bool cardDelete = false;
     public static int firstNumber = 0;
 
     void Start()
     {
-        
+        target = cardPos;
     }
 
     
     void Update()
     {
+        transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
+
         if (TurnManager.turnCount == 1)
         {
             if (Count.mySkillCount == myCardNumber)
             {
-                transform.position = new Vector3(8, 0, 0);
+                target = new Vector3(8, 0, 0);
                 transform.localScale = new Vector3(0.9f, 0.9f, 0);
                 cardMove = false;
             }
 
             if (cardMove == false && Count.myNumberCount != myCardNumber&&cardDelete==false)
             {
-                transform.position = cardPos;
+                target = cardPos;
                 cardMove = true;
             }
         }
@@ -45,7 +48,7 @@ public class MyCardControl : MonoBehaviour
         {
             Count.myNumberCount = myCardNumber;
             firstNumber = myCardNumber;
-            transform.position = new Vector3(8, 0, 0);
+            target = new Vector3(8, 0, 0);
             transform.localScale = new Vector3(0.9f, 0.9f, 0);
             cardMove = false;
         }
@@ -56,7 +59,7 @@ public class MyCardControl : MonoBehaviour
         {
             if (Count.myNumberCount != myCardNumber && cardMove == true)
             {
-                transform.position = new Vector3(myCardXPos, -5, -1);
+                target = new Vector3(myCardXPos, -5, -1);
                 transform.localScale = new Vector3(2, 2, 0);
             }
         }
@@ -68,7 +71,7 @@ public class MyCardControl : MonoBehaviour
         {
             if (Count.mySkillCount != myCardNumber && cardMove == true)
             {
-                transform.position = cardPos;
+                target = cardPos;
                 transform.localScale = new Vector3(0.9f, 0.9f, 0);
             }
         }
@@ -84,7 +87,7 @@ public class MyCardControl : MonoBehaviour
                 {
                     if (cardMove == false)
                     {
-                        transform.position = new Vector3(-8, 0, 0);
+                        target = new Vector3(-8, 0, 0);
                     }
                 }
             }
