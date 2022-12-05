@@ -97,7 +97,7 @@ public class OtherSkill : MonoBehaviour
             {
                 if (Count.otherNumberCount > Count.myNumberCount)
                 {
-                    if (!noUseSkill.Contains(1) && !noUseSkill.Contains(4) && !noUseSkill.Contains(5))
+                    if (!noUseSkill.Contains(1) && !noUseSkill.Contains(4))
                     {
                         RandomSkill();
                     }
@@ -105,7 +105,7 @@ public class OtherSkill : MonoBehaviour
                     {
                         while (Count.otherSkillCount == 0)
                         {
-                            int i = Random.Range(1, 4);
+                            int i = Random.Range(1, 3);
                             if (noUseSkill.Contains(1) && i == 1)
                             {
                                 Count.otherSkillCount = 1;
@@ -114,10 +114,7 @@ public class OtherSkill : MonoBehaviour
                             {
                                 Count.otherSkillCount = 4;
                             }
-                            else if (noUseSkill.Contains(5) && i == 3)
-                            {
-                                Count.otherSkillCount = 5;
-                            }
+                            
                         }
                     }
                 }
@@ -174,7 +171,7 @@ public class OtherSkill : MonoBehaviour
             {
                 if (Count.otherNumberCount > Count.myNumberCount)
                 {
-                    if (!noUseSkill.Contains(1) && !noUseSkill.Contains(4) && !noUseSkill.Contains(5))
+                    if (!noUseSkill.Contains(1) && !noUseSkill.Contains(4))
                     {
                         RandomSkill();
                     }
@@ -182,7 +179,7 @@ public class OtherSkill : MonoBehaviour
                     {
                         while (Count.otherSkillCount == 0)
                         {
-                            int i = Random.Range(1, 4);
+                            int i = Random.Range(1, 3);
                             if (noUseSkill.Contains(1) && i == 1)
                             {
                                 Count.otherSkillCount = 1;
@@ -190,10 +187,6 @@ public class OtherSkill : MonoBehaviour
                             else if (noUseSkill.Contains(4) && i == 2)
                             {
                                 Count.otherSkillCount = 4;
-                            }
-                            else if (noUseSkill.Contains(5) && i == 3)
-                            {
-                                Count.otherSkillCount = 5;
                             }
                         }
                     }
@@ -255,7 +248,7 @@ public class OtherSkill : MonoBehaviour
             {
                 if (Count.otherNumberCount > Count.myNumberCount)
                 {
-                    if (!noUseSkill.Contains(1) && !noUseSkill.Contains(4) && !noUseSkill.Contains(5))
+                    if (!noUseSkill.Contains(1) && !noUseSkill.Contains(4))
                     {
                         RandomSkill();
                     }
@@ -263,7 +256,7 @@ public class OtherSkill : MonoBehaviour
                     {
                         while (Count.otherSkillCount == 0)
                         {
-                            int i = Random.Range(1, 4);
+                            int i = Random.Range(1, 3);
                             if (noUseSkill.Contains(1) && i == 1)
                             {
                                 Count.otherSkillCount = 1;
@@ -271,10 +264,6 @@ public class OtherSkill : MonoBehaviour
                             else if (noUseSkill.Contains(4) && i == 2)
                             {
                                 Count.otherSkillCount = 4;
-                            }
-                            else if (noUseSkill.Contains(5) && i == 3)
-                            {
-                                Count.otherSkillCount = 5;
                             }
                         }
                     }
@@ -336,7 +325,7 @@ public class OtherSkill : MonoBehaviour
             {
                 if (Count.otherNumberCount > Count.myNumberCount)
                 {
-                    if (!noUseSkill.Contains(1)&&!noUseSkill.Contains(2) && !noUseSkill.Contains(4) && !noUseSkill.Contains(5))
+                    if (!noUseSkill.Contains(1)&&!noUseSkill.Contains(2) && !noUseSkill.Contains(4))
                     {
                         RandomSkill();
                     }
@@ -344,7 +333,7 @@ public class OtherSkill : MonoBehaviour
                     {
                         while (Count.otherSkillCount == 0)
                         {
-                            int i = Random.Range(1, 5);
+                            int i = Random.Range(1, 4);
                             if (noUseSkill.Contains(1) && i == 1)
                             {
                                 Count.otherSkillCount = 1;
@@ -356,10 +345,6 @@ public class OtherSkill : MonoBehaviour
                             else if (noUseSkill.Contains(4) && i == 3)
                             {
                                 Count.otherSkillCount = 4;
-                            }
-                            else if (noUseSkill.Contains(5) && i == 4)
-                            {
-                                Count.otherSkillCount = 5;
                             }
                         }
                     }

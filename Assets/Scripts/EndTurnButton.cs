@@ -41,6 +41,15 @@ public class EndTurnButton : MonoBehaviour
 
         if (TurnManager.turnCount == 3 && isDelay == false)
         {
+            if(Count.myNumberCount> Count.otherNumberCount)
+            {
+                Count.myScore += 1;
+            }
+            if (Count.myNumberCount < Count.otherNumberCount)
+            {
+                Count.otherScore += 1;
+            }
+
             MyCardControl.cardDelete = true;
             OtherCardControl.cardDelete = true;
             OtherSkill.cardDelete = true;

@@ -10,8 +10,12 @@ public class Count : MonoBehaviour
     public static int otherNumberCount = 0;
     public static int mySkillCount = 0;
     public static int otherSkillCount = 0;
+    public static int myScore = 0;
+    public static int otherScore = 0;
     public int count1;
     public int count2;
+    public int mScore;
+    public int oScore;
     public Vector3 bSSPos;
 
     void Start()
@@ -24,6 +28,8 @@ public class Count : MonoBehaviour
     {
         count1 = myNumberCount;
         count2 = otherNumberCount;
+        mScore = myScore;
+        oScore = otherScore;
 
         if (TurnManager.turnCount>1)
         {

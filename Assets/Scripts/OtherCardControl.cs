@@ -59,7 +59,7 @@ public class OtherCardControl : MonoBehaviour
 
     void SkillThree()
     {
-        if (Count.mySkillCount != 4 || Count.otherSkillCount != 4)
+        if (Count.mySkillCount != 4 && Count.otherSkillCount != 4)
         {
             if ((Count.mySkillCount == 3 && Count.otherSkillCount != 3) || (Count.otherSkillCount == 3 && Count.mySkillCount != 3))
             {
