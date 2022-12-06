@@ -36,6 +36,16 @@ public class StartButton : MonoBehaviour
 
     public void StartGame()
     {
+        SceneManager.LoadScene("Select");
+    }
+
+    public void HotGame()
+    {
+        Debug.Log("¡ÿ∫Ò ¡ﬂ");
+    }
+
+    public void AIGame()
+    {
         SceneManager.LoadScene("otherGame");
     }
 
