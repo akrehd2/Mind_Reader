@@ -8,7 +8,7 @@ public class OtherCardControl : MonoBehaviour
 
     public List<int> noUseNumber = new List<int>()
     {1,2,3,4,5};
-    public int nUNSize = 4;
+    public int nUNSize = 5;
     public bool cardMove = true;
     public static bool cardDelete = false;
     public int j = 0;
@@ -66,7 +66,7 @@ public class OtherCardControl : MonoBehaviour
     {
         if (TurnManager.turnCount == 2 && Count.otherNumberCount == 0)
         {
-            int i = Random.Range(0, nUNSize);
+            int i = Random.Range(0, nUNSize-1);
             Count.otherNumberCount = noUseNumber[i];
             noUseNumber.Remove(Count.otherNumberCount);
         }

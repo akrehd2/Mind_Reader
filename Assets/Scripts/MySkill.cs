@@ -67,7 +67,7 @@ public class MySkill : MonoBehaviour
         {
             if (Count.mySkillCount != skillNumber && skillMouse == true)
             {
-                target = new Vector3(skillXPos, -5, 10);
+                target = new Vector3(skillXPos, -5, 0);
                 transform.localScale = new Vector3(2, 2, 0);
             }
         }
