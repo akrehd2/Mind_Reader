@@ -17,7 +17,7 @@ public class OtherBlank : MonoBehaviour
     
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
+        transform.position = Vector3.MoveTowards(transform.position, target, 1f);
 
         if(TurnManager.turnCount == 3)
         {

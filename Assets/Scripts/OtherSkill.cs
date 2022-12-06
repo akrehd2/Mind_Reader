@@ -16,16 +16,19 @@ public class OtherSkill : MonoBehaviour
 
     public SpriteRenderer renderer;
 
+    AudioSource audio;
+
     void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
         target = cardPos;
+        audio = GetComponent<AudioSource>();
     }
 
-    
+
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
+        transform.position = Vector3.MoveTowards(transform.position, target, 1f);
 
         if(TurnManager.turnCount == 2)
         {
@@ -38,6 +41,7 @@ public class OtherSkill : MonoBehaviour
 
         if (Count.otherSkillCount==skillNumber)
         {
+            audio.Play();
             transform.position = new Vector3(-16, 0, 0);
             target = new Vector3(-16, 0, 0);
         }
@@ -415,6 +419,7 @@ public class OtherSkill : MonoBehaviour
             if (gameObject.transform.position == new Vector3(-16, 0, 0))
             {
                 target = new Vector3(27, 0, 0);
+                audio.Play();
             }
         }
     }

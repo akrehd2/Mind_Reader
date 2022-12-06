@@ -16,9 +16,12 @@ public class OtherCardControl : MonoBehaviour
     public Vector3 target;
     public Vector3 CardPos;
 
+    AudioSource audio;
+
     void Start()
     {
         target = CardPos;
+        audio = GetComponent<AudioSource>();
     }
 
     
@@ -37,6 +40,7 @@ public class OtherCardControl : MonoBehaviour
         {
             if (Count.otherNumberCount == otherCardNumber)
             {
+                audio.Play();
                 transform.position = new Vector3(-8, 0, 0);
                 target = new Vector3(-8, 0, 0);
                 cardMove = false;
@@ -79,6 +83,7 @@ public class OtherCardControl : MonoBehaviour
                     if (cardMove == false)
                     {
                         target = new Vector3(8, 0, 0);
+                        audio.Play();
                     }
                 }
             }
@@ -92,6 +97,7 @@ public class OtherCardControl : MonoBehaviour
             if (gameObject.transform.position == new Vector3(8, 0, 0) || gameObject.transform.position == new Vector3(-8, 0, 0))
             {
                 target = new Vector3(27, 0, 0);
+                audio.Play();
             }
         }
     }
