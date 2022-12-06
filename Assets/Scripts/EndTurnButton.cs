@@ -22,10 +22,24 @@ public class EndTurnButton : MonoBehaviour
             StartCoroutine(Set());
         }
     }
+    private void OnMouseOver()
+    {
+        sprite.color = new Color(1, 1, 1, 0.5f);
+    }
+
+    void OnMouseUp()
+    {
+        sprite.color = new Color(1, 1, 1, 1f);
+    }
+
+    void OnMouseExit()
+    {
+        sprite.color = new Color(1, 1, 1, 1f);
+    }
 
     void OnMouseDown()
     {
-        sprite.color = new Color(1, 1, 1, 0.5f);
+        sprite.color = new Color(1, 1, 1, 0.2f);
         
 
         if (TurnManager.turnCount == 1 && Count.myNumberCount != 0&&isDelay==false)
@@ -64,11 +78,6 @@ public class EndTurnButton : MonoBehaviour
             isDelay = true;
             StartCoroutine(Reload());
         }
-    }
-
-    void OnMouseUp()
-    {
-        sprite.color = new Color(1, 1, 1, 1f);
     }
 
     void SkillPower()
@@ -157,20 +166,20 @@ public class EndTurnButton : MonoBehaviour
 
     IEnumerator Set()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1f);
         TurnManager.turnCount += 1;
         isDelay = false;
     }
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         isDelay = false;
     }
 
     IEnumerator Reload()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         MyCardControl.cardDelete = false;
         OtherCardControl.cardDelete = false;
         OtherSkill.cardDelete = false;
