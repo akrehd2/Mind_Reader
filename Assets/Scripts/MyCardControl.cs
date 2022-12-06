@@ -12,15 +12,19 @@ public class MyCardControl : MonoBehaviour
     public static bool cardDelete = false;
     public static int firstNumber = 0;
 
+    AudioSource audio;
+
     void Start()
     {
         target = cardPos;
+
+        audio = GetComponent<AudioSource>();
     }
 
     
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
+        transform.position = Vector3.MoveTowards(transform.position, target, 1f);
 
         if (TurnManager.turnCount == 1)
         {
@@ -52,6 +56,7 @@ public class MyCardControl : MonoBehaviour
         if (TurnManager.turnCount == 1&&cardMove==true)
         {
             Count.myNumberCount = myCardNumber;
+            audio.Play();
             firstNumber = myCardNumber;
             target = new Vector3(8, 0, 0);
             transform.localScale = new Vector3(0.9f, 0.9f, 0);
@@ -93,6 +98,7 @@ public class MyCardControl : MonoBehaviour
                     if (cardMove == false)
                     {
                         target = new Vector3(-8, 0, 0);
+                        audio.Play();
                     }
                 }
             }
@@ -106,6 +112,7 @@ public class MyCardControl : MonoBehaviour
             if (gameObject.transform.position==new Vector3(8,0,0)|| gameObject.transform.position == new Vector3(-8, 0, 0))
             {
                 target = new Vector3(27, 0, 0);
+                audio.Play();
             }
         }
     }

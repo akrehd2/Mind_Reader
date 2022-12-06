@@ -166,7 +166,7 @@ public class EndTurnButton : MonoBehaviour
 
     IEnumerator Set()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         TurnManager.turnCount += 1;
         isDelay = false;
     }

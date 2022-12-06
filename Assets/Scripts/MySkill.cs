@@ -11,15 +11,19 @@ public class MySkill : MonoBehaviour
     public bool skillMouse = true;
     public static bool cardDelete = false;
 
+    AudioSource audio;
+
     void Start()
     {
         target = cardPos;
+
+        audio = GetComponent<AudioSource>();
     }
 
     
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
+        transform.position = Vector3.MoveTowards(transform.position, target, 1f);
 
         if (TurnManager.turnCount == 2)
         {
@@ -52,6 +56,7 @@ public class MySkill : MonoBehaviour
             if (skillMouse == true)
             {
                 Count.mySkillCount = skillNumber;
+                audio.Play();
             }
         }
     }
@@ -87,6 +92,7 @@ public class MySkill : MonoBehaviour
             if (gameObject.transform.position == new Vector3(16, 0, 20))
             {
                 target = new Vector3(27, 0, 0);
+                audio.Play();
             }
         }
     }
