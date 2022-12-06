@@ -8,7 +8,7 @@ public class OtherSkill : MonoBehaviour
 
     public List<int> noUseSkill = new List<int>()
     {1,2,3,4,5};
-    public int nUSSize = 4;
+    public int nUSSize = 5;
     public static bool cardDelete = false;
 
     public Vector3 cardPos;
@@ -860,7 +860,7 @@ public class OtherSkill : MonoBehaviour
 
     void RandomSkill()
     {
-        int i = Random.Range(0, nUSSize);
+        int i = Random.Range(0, nUSSize-1);
         Count.otherSkillCount = noUseSkill[i];
     }
 
