@@ -38,6 +38,11 @@ public class MyCardControl : MonoBehaviour
             }
         }
 
+        if (TurnManager.turnCount != 0 && gameObject.transform.position == new Vector3(27, 0, 0))
+        {
+            Destroy(gameObject);
+        }
+
         SkillThree();
         CardDestroy();
     }
@@ -100,8 +105,7 @@ public class MyCardControl : MonoBehaviour
         {
             if (gameObject.transform.position==new Vector3(8,0,0)|| gameObject.transform.position == new Vector3(-8, 0, 0))
             {
-                cardDelete = false;
-                Destroy(gameObject);
+                target = new Vector3(27, 0, 0);
             }
         }
     }

@@ -4,34 +4,27 @@ using UnityEngine;
 
 public class OtherBlank : MonoBehaviour
 {
-    public Vector3 blankPos;
-    public int blankNumber;
-    public Vector3 blank1Pos = new Vector3(-8, 0, 0);
-    public Vector3 blank2Pos = new Vector3(-16, 0, 0);
+    public Vector3 target;
+    public Vector3 CardPos;
+
+    public static bool cardDelete = false;
 
     void Start()
     {
-        
+        target = CardPos;
     }
 
     
     void Update()
     {
-        if(TurnManager.turnCount==2)
-        {
-            if(blankNumber==1)
-            {
-                transform.position = blank1Pos;
-            }
+        transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
 
-            if(blankNumber==2)
-            {
-                transform.position = blank2Pos;
-            }
-        }
-        else
+        if(TurnManager.turnCount == 3)
         {
-            transform.position = blankPos;
+            if (gameObject.transform.position == new Vector3(-8, 0, 0) || gameObject.transform.position == new Vector3(-16, 0, 0))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
