@@ -7,7 +7,7 @@ public class BlankCtrl : MonoBehaviour
     public GameObject[] num = new GameObject[10];
     public OtherBlank[] scripts = new OtherBlank[10];
 
-    public Vector3 DrawPos = new Vector3(27, 0, 0);
+    public Vector3 DrawPos = new Vector3(27, 0, 1);
     public Vector3 blank1Pos = new Vector3(-8, 0, 0);
     public Vector3 blank2Pos = new Vector3(-16, 0, 0);
 

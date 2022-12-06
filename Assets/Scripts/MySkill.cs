@@ -41,7 +41,7 @@ public class MySkill : MonoBehaviour
             }
         }
 
-        if (TurnManager.turnCount != 0 && gameObject.transform.position == new Vector3(27, 0, 0))
+        if (TurnManager.turnCount != 0 && gameObject.transform.position == new Vector3(27, 0, 1))
         {
             Destroy(gameObject);
         }
@@ -91,7 +91,7 @@ public class MySkill : MonoBehaviour
         {
             if (gameObject.transform.position == new Vector3(16, 0, 20))
             {
-                target = new Vector3(27, 0, 0);
+                target = new Vector3(27, 0, 1);
                 audio.Play();
             }
         }
