@@ -88,12 +88,12 @@ public class EndTurnButton : MonoBehaviour
             {
                 if (Count.otherSkillCount == 3)
                 {
-                    Count.otherNumberCount += 5;
+                    Count.otherNumberCount += 3;
                     Count.myNumberCount = Count.otherNumberCount;
                 }
                 else
                 {
-                    Count.myNumberCount += 5;
+                    Count.myNumberCount += 3;
                 }
             }
             if (Count.mySkillCount == 2)
@@ -131,7 +131,7 @@ public class EndTurnButton : MonoBehaviour
         {
             if (Count.otherSkillCount == 1)
             {
-                Count.otherNumberCount += 5;
+                Count.otherNumberCount += 3;
             }
             if (Count.otherSkillCount == 2)
             {
