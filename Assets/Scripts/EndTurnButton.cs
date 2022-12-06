@@ -6,7 +6,7 @@ public class EndTurnButton : MonoBehaviour
 {
     SpriteRenderer sprite;
 
-    public bool isDelay;
+    public bool isDelay = false;
 
     void Start()
     {
@@ -16,12 +16,17 @@ public class EndTurnButton : MonoBehaviour
  
     void Update()
     {
-
+        if (TurnManager.turnCount == 0 && isDelay == false)
+        {
+            isDelay = true;
+            StartCoroutine(Set());
+        }
     }
 
     void OnMouseDown()
     {
         sprite.color = new Color(1, 1, 1, 0.5f);
+        
 
         if (TurnManager.turnCount == 1 && Count.myNumberCount != 0&&isDelay==false)
         {
@@ -54,9 +59,10 @@ public class EndTurnButton : MonoBehaviour
             OtherCardControl.cardDelete = true;
             OtherSkill.cardDelete = true;
             MySkill.cardDelete = true;
+            
             Reset();
             isDelay = true;
-            StartCoroutine(Wait());
+            StartCoroutine(Reload());
         }
     }
 
@@ -140,16 +146,35 @@ public class EndTurnButton : MonoBehaviour
 
     void Reset()
     {
+        BlankCtrl.turn1 = true;
+        BlankCtrl.turn2 = true;
         Count.myNumberCount = 0;
         Count.otherNumberCount = 0;
         Count.mySkillCount = 0;
         Count.otherSkillCount = 0;
-        TurnManager.turnCount = 1;
+        TurnManager.turnCount = 0;
+    }
+
+    IEnumerator Set()
+    {
+        yield return new WaitForSeconds(1.0f);
+        TurnManager.turnCount += 1;
+        isDelay = false;
     }
 
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(1.0f);
+        isDelay = false;
+    }
+
+    IEnumerator Reload()
+    {
+        yield return new WaitForSeconds(1.0f);
+        MyCardControl.cardDelete = false;
+        OtherCardControl.cardDelete = false;
+        OtherSkill.cardDelete = false;
+        MySkill.cardDelete = false;
         isDelay = false;
     }
 }

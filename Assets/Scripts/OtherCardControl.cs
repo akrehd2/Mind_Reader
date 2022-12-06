@@ -13,14 +13,19 @@ public class OtherCardControl : MonoBehaviour
     public static bool cardDelete = false;
     public int j = 0;
 
+    public Vector3 target;
+    public Vector3 CardPos;
+
     void Start()
     {
-        
+        target = CardPos;
     }
 
     
     void Update()
     {
+        transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
+
         RandomNumber();
 
         if(TurnManager.turnCount==1)
@@ -33,6 +38,7 @@ public class OtherCardControl : MonoBehaviour
             if (Count.otherNumberCount == otherCardNumber)
             {
                 transform.position = new Vector3(-8, 0, 0);
+                target = new Vector3(-8, 0, 0);
                 cardMove = false;
             }
             noUseNumber.Remove(Count.otherNumberCount);
@@ -41,6 +47,11 @@ public class OtherCardControl : MonoBehaviour
                 nUNSize -= 1;
                 j += 1;
             }
+        }
+
+        if (TurnManager.turnCount != 0 && gameObject.transform.position == new Vector3(27, 0, 0))
+        {
+            Destroy(gameObject);
         }
 
         SkillThree();
@@ -67,7 +78,7 @@ public class OtherCardControl : MonoBehaviour
                 {
                     if (cardMove == false)
                     {
-                        transform.position = new Vector3(8, 0, 0);
+                        target = new Vector3(8, 0, 0);
                     }
                 }
             }
@@ -80,8 +91,7 @@ public class OtherCardControl : MonoBehaviour
         {
             if (gameObject.transform.position == new Vector3(8, 0, 0) || gameObject.transform.position == new Vector3(-8, 0, 0))
             {
-                cardDelete = false;
-                Destroy(gameObject);
+                target = new Vector3(27, 0, 0);
             }
         }
     }

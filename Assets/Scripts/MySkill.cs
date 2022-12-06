@@ -37,6 +37,11 @@ public class MySkill : MonoBehaviour
             }
         }
 
+        if (TurnManager.turnCount != 0 && gameObject.transform.position == new Vector3(27, 0, 0))
+        {
+            Destroy(gameObject);
+        }
+
         CardDestroy();
     }
 
@@ -81,8 +86,7 @@ public class MySkill : MonoBehaviour
         {
             if (gameObject.transform.position == new Vector3(16, 0, 20))
             {
-                cardDelete = false;
-                Destroy(gameObject);
+                target = new Vector3(27, 0, 0);
             }
         }
     }

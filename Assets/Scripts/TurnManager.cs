@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurnManager : MonoBehaviour
 {
-    public static int turnCount = 1;
+    public static int turnCount = 0;
     public int tc = 0;
 
     void Start()
