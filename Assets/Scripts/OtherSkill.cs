@@ -8,14 +8,17 @@ public class OtherSkill : MonoBehaviour
 
     public List<int> noUseSkill = new List<int>()
     {1,2,3,4,5};
-    public int nUSSize = 5;
+    public int nUSSize = 4;
     public static bool cardDelete = false;
 
     public Vector3 cardPos;
     public Vector3 target;
 
+    public SpriteRenderer renderer;
+
     void Start()
     {
+        renderer = GetComponent<SpriteRenderer>();
         target = cardPos;
     }
 
@@ -23,6 +26,15 @@ public class OtherSkill : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
+
+        if(TurnManager.turnCount == 2)
+        {
+            renderer.color = new Color(1, 1, 1, 0);
+        }
+        else if(TurnManager.turnCount == 3)
+        {
+            renderer.color = new Color(1, 1, 1, 1);
+        }
 
         if (Count.otherSkillCount==skillNumber)
         {
