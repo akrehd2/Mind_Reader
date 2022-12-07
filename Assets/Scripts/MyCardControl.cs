@@ -24,7 +24,7 @@ public class MyCardControl : MonoBehaviour
     
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 1f);
+        transform.position = Vector3.MoveTowards(transform.position, target, 2f);
 
         if (TurnManager.turnCount == 1)
         {

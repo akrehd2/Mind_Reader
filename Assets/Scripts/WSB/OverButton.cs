@@ -35,6 +35,13 @@ public class OverButton : MonoBehaviour
         }
         else if (gameObject.name == "Main")
         {
+            over[0].SetActive(false);
+            over[1].SetActive(false);
+            over[2].SetActive(false);
+            over[3].SetActive(false);
+            ScoreMang.remainCard = 5;
+            Count.myScore = 0;
+            Count.otherScore = 0;
             SceneManager.LoadScene("Start");
         }
     }
