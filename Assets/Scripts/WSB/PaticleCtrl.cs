@@ -37,5 +37,10 @@ public class PaticleCtrl : MonoBehaviour
             GameObject Click = Instantiate(ParticlePrefabs[0], MousePos) as GameObject;
             Click.transform.SetParent(null);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
