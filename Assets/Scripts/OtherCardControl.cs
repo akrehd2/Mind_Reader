@@ -66,9 +66,43 @@ public class OtherCardControl : MonoBehaviour
     {
         if (TurnManager.turnCount == 2 && Count.otherNumberCount == 0)
         {
-            int i = Random.Range(0, nUNSize-1);
-            Count.otherNumberCount = noUseNumber[i];
-            noUseNumber.Remove(Count.otherNumberCount);
+            int jjj = 0;
+            while (jjj == 0)
+            {
+                int i = Random.Range(0, nUNSize);
+                if (noUseNumber[i] == 3)
+                {
+                    if (noUseNumber.Contains(4) || noUseNumber.Contains(5))
+                    {
+                        jjj = 0;
+                    }
+                    else
+                    {
+                        Count.otherNumberCount = noUseNumber[i];
+                        noUseNumber.Remove(Count.otherNumberCount);
+                        jjj = 1;
+                    }
+                }
+                if (noUseNumber[i] == 4)
+                {
+                    if (noUseNumber.Contains(5))
+                    {
+                        jjj = 0;
+                    }
+                    else
+                    {
+                        Count.otherNumberCount = noUseNumber[i];
+                        noUseNumber.Remove(Count.otherNumberCount);
+                        jjj = 1;
+                    }
+                }
+                if (noUseNumber[i] != 4 && noUseNumber[i] != 3)
+                {
+                    Count.otherNumberCount = noUseNumber[i];
+                    noUseNumber.Remove(Count.otherNumberCount);
+                    jjj = 1;
+                }
+            }
         }
     }
 
