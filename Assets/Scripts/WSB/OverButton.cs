@@ -28,9 +28,20 @@ public class OverButton : MonoBehaviour
             over[1].SetActive(false);
             over[2].SetActive(false);
             over[3].SetActive(false);
+            BlankCtrl.turn1 = true;
+            BlankCtrl.turn2 = true;
+            Count.myNumberCount = 0;
+            Count.otherNumberCount = 0;
+            Count.mySkillCount = 0;
+            Count.otherSkillCount = 0;
+            TurnManager.turnCount = 0;
             ScoreMang.remainCard = 5;
             Count.myScore = 0;
             Count.otherScore = 0;
+            MyCardControl.cardDelete = false;
+            OtherCardControl.cardDelete = false;
+            OtherSkill.cardDelete = false;
+            MySkill.cardDelete = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (gameObject.name == "Main")
@@ -39,9 +50,20 @@ public class OverButton : MonoBehaviour
             over[1].SetActive(false);
             over[2].SetActive(false);
             over[3].SetActive(false);
+            BlankCtrl.turn1 = true;
+            BlankCtrl.turn2 = true;
+            Count.myNumberCount = 0;
+            Count.otherNumberCount = 0;
+            Count.mySkillCount = 0;
+            Count.otherSkillCount = 0;
+            TurnManager.turnCount = 0;
             ScoreMang.remainCard = 5;
             Count.myScore = 0;
             Count.otherScore = 0;
+            MyCardControl.cardDelete = false;
+            OtherCardControl.cardDelete = false;
+            OtherSkill.cardDelete = false;
+            MySkill.cardDelete = false;
             SceneManager.LoadScene("Start");
         }
     }

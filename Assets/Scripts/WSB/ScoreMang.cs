@@ -8,8 +8,14 @@ public class ScoreMang : MonoBehaviour
 
     public static int remainCard = 5;
 
+    private void Start()
+    {
+        remainCard = 5;
+    }
+
     void Update()
     {
+        Debug.Log(remainCard);
         if (Count.myScore >= 3)
         {
             obj[0].SetActive(true);
