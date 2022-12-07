@@ -27,7 +27,7 @@ public class OtherCardControl : MonoBehaviour
     
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target, 0.5f);
+        transform.position = Vector3.MoveTowards(transform.position, target, 2f);
 
         RandomNumber();
 

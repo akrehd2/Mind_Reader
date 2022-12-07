@@ -49,6 +49,11 @@ public class StartButton : MonoBehaviour
         SceneManager.LoadScene("otherGame");
     }
 
+    public void GotoMain()
+    {
+        SceneManager.LoadScene("Start");
+    }
+
     public void HelpGame()
     {
         help.SetActive(true);
