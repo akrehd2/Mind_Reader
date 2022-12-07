@@ -31,7 +31,7 @@ public class OtherCardControl : MonoBehaviour
 
         RandomNumber();
 
-        if(TurnManager.turnCount==1)
+        if (TurnManager.turnCount==1)
         {
             j = 0;
         }

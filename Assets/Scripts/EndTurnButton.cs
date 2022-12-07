@@ -120,7 +120,7 @@ public class EndTurnButton : MonoBehaviour
             }
             if (Count.mySkillCount == 5)
             {
-
+                
             }
         }
     }
@@ -141,6 +141,7 @@ public class EndTurnButton : MonoBehaviour
             {
                 int i = Count.otherNumberCount;
                 Count.otherNumberCount = MyCardControl.firstNumber;
+                Count.myNumberCount = i;
             }
             if (Count.otherSkillCount == 4)
             {
