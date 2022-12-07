@@ -5,7 +5,8 @@ using UnityEngine;
 public class ScoreMang : MonoBehaviour
 {
     public GameObject[] obj = new GameObject[4];
-    public GameObject[] Card = new GameObject[5];
+
+    public static int remainCard = 5;
 
     void Update()
     {
@@ -19,9 +20,18 @@ public class ScoreMang : MonoBehaviour
             obj[0].SetActive(true);
             obj[3].SetActive(true);
         }
-        else if (Count.otherScore == Count.myScore && Card == null)
+        else if (Count.otherScore < Count.myScore && remainCard == 0)
         {
-            Debug.Log("ºñ±è");
+            obj[0].SetActive(true);
+            obj[1].SetActive(true);
+        }
+        else if (Count.otherScore > Count.myScore && remainCard == 0)
+        {
+            obj[0].SetActive(true);
+            obj[3].SetActive(true);
+        }
+        else if (Count.otherScore == Count.myScore && remainCard == 0)
+        {
             obj[0].SetActive(true);
             obj[2].SetActive(true);
         }

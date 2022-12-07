@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class OverButton : MonoBehaviour
 {
     SpriteRenderer sprite;
-    public GameObject over;
+    public GameObject[] over = new GameObject[4];
 
     private void Start()
     {
@@ -24,9 +24,14 @@ public class OverButton : MonoBehaviour
 
         if(gameObject.name == "Retry")
         {
-            Time.timeScale = 1f;
-            over.SetActive(false);
-            SceneManager.LoadScene("otherGame");
+            over[0].SetActive(false);
+            over[1].SetActive(false);
+            over[2].SetActive(false);
+            over[3].SetActive(false);
+            ScoreMang.remainCard = 5;
+            Count.myScore = 0;
+            Count.otherScore = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (gameObject.name == "Main")
         {

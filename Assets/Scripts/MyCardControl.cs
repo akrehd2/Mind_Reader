@@ -116,4 +116,9 @@ public class MyCardControl : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        ScoreMang.remainCard -= 1;
+    }
 }
